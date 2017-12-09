@@ -204,6 +204,10 @@ figure {
     padding-bottom: 0;
   }
 
+  main {
+    margin-left: 9%
+  }
+
   .site-logo {
     width: 6%;
     height: 6%;
@@ -218,6 +222,10 @@ figure {
 
   .site-nav-item {
     width: 100%;
+  }
+
+  .movie-overview {
+    display: block;
   }
 
 }
