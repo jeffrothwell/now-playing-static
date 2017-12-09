@@ -195,3 +195,29 @@ figure {
 .about > p {
   margin: 0;
 }
+
+/* Tablet version styles start here - break point is to be 768px width*/
+
+@media ( min-width: 768px ) {
+
+  body {
+    padding-bottom: 0;
+  }
+
+  .site-logo {
+    width: 6%;
+    height: 6%;
+    margin: -0.4%;
+  }
+
+  .site-nav {
+    width: 9%;
+    height: 100%;
+    z-index: 80;
+  }
+
+  .site-nav-item {
+    width: 100%;
+  }
+
+}
