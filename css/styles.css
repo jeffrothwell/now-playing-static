@@ -317,7 +317,7 @@ figure {
     width: 100%;
   }
 
-  .movie:first-child .movie-overview {
+  .movie:first-child .movie-overview, .movie:first-child .movie-backdrop {
     display: block;
   }
 
@@ -325,9 +325,6 @@ figure {
     display: none;
   }
 
-  .movie:first-child .movie-backdrop {
-    display: block;
-  }
 
 /*  since each movie was floated left, unless the number of Movies
     was a multiple of 3, the footer would be messed up  */
