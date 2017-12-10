@@ -285,17 +285,59 @@ figure {
 
 @media ( min-width: 992px ) {
 
+/*  first I turn off the movie overview display for all Movies
+    further down I will turn it back on for just the first movie */
+
   .movie-overview {
     display: none;
   }
+
+/*  make the whole thing a 3-column layout */
 
   .movie {
     width: 33.333333333%;
     float: left;
   }
 
+  /*  next 2 rules will turn off the movie backdrop and show the movie
+      poster instead.  again, I will reverse this later for just the
+      first movie  */
+
+  .movie-poster {
+    display: block;
+  }
+
+  .movie-backdrop {
+    display: none;
+  }
+
+/*  next 4 rules reverse the above changes for the first movie  */
+
+  .movie:first-child {
+    width: 100%;
+  }
+
   .movie:first-child .movie-overview {
     display: block;
+  }
+
+  .movie:first-child .movie-poster {
+    display: none;
+  }
+
+  .movie:first-child .movie-backdrop {
+    display: block;
+  }
+
+/*  since each movie was floated left, unless the number of Movies
+    was a multiple of 3, the footer would be messed up  */
+
+  footer {
+    clear: both;
+  }
+
+  .footer-nav-item {
+    margin-right: 1.8em
   }
 
 }
