@@ -213,21 +213,32 @@ figure {
   }
 
 /*  trim down the logo, use percentages, experimented to get it to
-    stay centred in the nav pane even when screen width changes*/
+    stay centred in the nav pane even when tablet screen width changes*/
 
   .site-logo {
-    width: 6%;
-    height: 6%;
-    margin: -0.4%;
+    width: 9%;
+    height: 9%;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    padding: 0.5em;
   }
 
 /*  pop the nav over the be just 9% of the left side space and
-      extend all the way top to bottom*/
+      extend all the way top to bottom, z-index to allow
+      the bitmake logo to stay visible */
 
   .site-nav {
     width: 9%;
     height: 100%;
     z-index: 80;
+  }
+
+/*  this just gives the side bar nav clearance so it's not hidden
+    by the bitmaker logo*/
+
+  .site-nav-list {
+    margin-top: 90%;
   }
 
 /*  each nav item used to have a width of 20%, we NOW want
