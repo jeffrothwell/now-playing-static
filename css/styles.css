@@ -285,14 +285,59 @@ figure {
 
 @media ( min-width: 992px ) {
 
+  /*  THIS IS MY UPDATED SET OF RULES FOR DESKTOP - I found a beter way to
+      use the nth-child pseudo-selector to select all siblings except the
+      first one, I left my old set of rules in a comment at the bottom
+      for comparison
+
+      first, make the whole thing a 3-column layout */
+
+  .movie:nth-child(1n+2) {
+    width: 33.333333333%;
+    float: left;
+  }
+
+  /* turn off the movie overview display for all but the first  */
+
+  .movie:nth-child(1n+2) .movie-overview {
+    display: none;
+  }
+
+  /* swap movie-backdrop for movie-poster for all but the first  */
+
+  .movie:nth-child(1n+2) .movie-backdrop {
+      display: none;
+    }
+
+
+  .movie:nth-child(1n+2) .movie-poster {
+      display: block;
+    }
+
+/*  finally, clear both on the footer so it will be below all the posters
+    even if the number of movies is not a multiple of 3, and the margin
+    declaration on .footer-nav-item just spreads the footer nav items a
+    bit further apart, tested in the dev tools to make sure it displays
+    nicely even at the minimum screen width of 992px */
+
+    footer {
+      clear: both;
+    }
+
+    .footer-nav-item {
+      margin-right: 1.8em;
+    }
+}
+
+ /*  HERE'S HOW I DID IT THE FIRST TIME, KINDA INEFFICIENT...
+
 /*  first I turn off the movie overview display for all Movies
-    further down I will turn it back on for just the first movie */
 
   .movie-overview {
     display: none;
   }
 
-/*  make the whole thing a 3-column layout */
+/*  make the whole thing a 3-column layout
 
   .movie {
     width: 33.333333333%;
@@ -301,7 +346,7 @@ figure {
 
   /*  next 2 rules will turn off the movie backdrop and show the movie
       poster instead.  again, I will reverse this later for just the
-      first movie  */
+      first movie
 
   .movie-poster {
     display: block;
@@ -311,7 +356,7 @@ figure {
     display: none;
   }
 
-/*  next 4 rules reverse the above changes for the first movie  */
+/*  next 4 rules reverse the above changes for the first movie
 
   .movie:first-child {
     width: 100%;
@@ -325,16 +370,4 @@ figure {
     display: none;
   }
 
-
-/*  since each movie was floated left, unless the number of Movies
-    was a multiple of 3, the footer would be messed up  */
-
-  footer {
-    clear: both;
-  }
-
-  .footer-nav-item {
-    margin-right: 1.8em
-  }
-
-}
+  */
