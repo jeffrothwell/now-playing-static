@@ -272,12 +272,11 @@ figure {
 
   .footer-nav {
     float: left;
-    padding: 2.25em;
+    padding: 26.5px 0;
   }
 
   .about {
     float: right;
-    padding: 1.6em;
   }
 
 }
