@@ -200,13 +200,20 @@ figure {
 
 @media ( min-width: 768px ) {
 
+/*  Take out bottom padding that held space for the fixed nav bar */
+
   body {
     padding-bottom: 0;
   }
 
+/*  push main over to give room for the fixed nav on the left side*/
+
   main {
     margin-left: 9%
   }
+
+/*  trim down the logo, use percentages, experimented to get it to
+    stay centred in the nav pane even when screen width changes*/
 
   .site-logo {
     width: 6%;
@@ -214,18 +221,52 @@ figure {
     margin: -0.4%;
   }
 
+/*  pop the nav over the be just 9% of the left side space and
+      extend all the way top to bottom*/
+
   .site-nav {
     width: 9%;
     height: 100%;
     z-index: 80;
   }
 
+/*  each nav item used to have a width of 20%, we NOW want
+  them to take up 100% of the width of their container, which we
+  just shrank to be 9% of the width of main*/
+
   .site-nav-item {
     width: 100%;
   }
 
+  /*  just making the movie-overview visible again, and take up
+      the full width of its container */
+
   .movie-overview {
     display: block;
+  }
+
+/* the next 4 declarations make the footer navigation and
+   about sections show up side by side, white text on
+   black background  */
+
+  footer {
+    margin-left: 9%;
+  }
+
+  .footer-nav, .about {
+      width: 50%;
+      background-color: #000;
+      color: #fff;
+  }
+
+  .footer-nav {
+    float: left;
+    padding: 2.25em;
+  }
+
+  .about {
+    float: right;
+    padding: 1.6em;
   }
 
 }
